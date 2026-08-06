@@ -15,8 +15,6 @@ def summed(nums: list[int]) -> int:
 
 
 def summed_simple(nums: list[int]) -> int:
-    if not nums:
-        return 0
 
     total = 0
     for num in nums:
