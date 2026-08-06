@@ -10,10 +10,11 @@ Implement the "find minimum" algorithm in Python by completing the find_minimum(
 
 
 def find_minimum(nums: list[int]) -> float | None:
-    minimum = float("inf")
 
     if not nums:
         return None
+
+    minimum = float("inf")
 
     for num in nums:
         if num < minimum:
@@ -25,3 +26,4 @@ def find_minimum(nums: list[int]) -> float | None:
 nums = [1, 4, 6, 7]
 
 print(find_minimum(nums))
+print(find_minimum([]))
