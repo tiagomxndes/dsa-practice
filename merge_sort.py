@@ -35,7 +35,17 @@ Inputs: A and B. Two sorted lists of integers
 
 
 def merge_sort(nums: list[int]) -> list[int]:
-    pass
+    if len(nums) < 2:
+        return nums
+
+    mid = len(nums) // 2
+    left_half = nums[:mid]
+    right_half = nums[mid:]
+
+    sorted_left = merge_sort(left_half)
+    sorted_right = merge_sort(right_half)
+
+    return merge(sorted_left, sorted_right)
 
 
 def merge(first: list[int], second: list[int]) -> list[int]:
