@@ -39,3 +39,39 @@ class Stack:
 
         last = self.items.pop(-1)
         return last
+
+
+"""
+Balanced Parentheses
+Parentheses are balanced when each parenthesis has a corresponding parenthesis, and the pairs of parentheses are properly nested. For example:
+
+    ()
+    ()()
+    ((()))
+    (()(()))
+
+Unbalanced Parentheses
+
+    (
+    ())
+    (()()
+    (()))
+    )(
+
+As you scan the string, consider what each item on the stack should represent.
+Assignment
+Complete the is_balanced function.
+It takes a string as input and returns True if the parentheses in the string are balanced, and False otherwise. Use an instance of the provided Stack class in stack.py to keep track of the parentheses.
+"""
+
+
+def is_balanced(input_str: str) -> bool:
+    stack = Stack()
+    for paranthese in input_str:
+        if paranthese == "(":
+            stack.push(paranthese)
+        elif paranthese == ")" and not stack.size():
+            return False
+        elif paranthese == ")" and stack.size():
+            stack.pop()
+    return stack.size() == 0
