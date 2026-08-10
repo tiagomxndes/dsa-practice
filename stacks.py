@@ -8,6 +8,13 @@ For now, we'll just focus on two methods: push and size. Notice that the Stack c
 
 """
 
+"""
+Assignment
+
+    Complete the peek method. It should return the top item from the stack without modifying the stack. If the stack is empty, return None.
+    Complete the pop method. It should remove and return the top item from the stack. If the stack is empty, return None.
+
+"""
 from typing import Any
 
 
@@ -20,3 +27,15 @@ class Stack:
 
     def size(self) -> int:
         return len(self.items)
+
+    def peek(self) -> Any:
+        if not self.items:
+            return None
+        return self.items[-1]
+
+    def pop(self) -> Any:
+        if not self.items:
+            return None
+
+        last = self.items.pop(-1)
+        return last
